@@ -2,6 +2,9 @@ const player = require('play-sound')((opts = {}));
 // const User = require('../../db/models');
 
 // Наш герой.
+const Game = require("../Game");
+
+const player = require("play-sound")((opts = {}));
 
 class Hero {
   constructor({ boomerang, score = 0, position = { x: 0, y: 0 } }) {
@@ -71,9 +74,11 @@ class Hero {
     setTimeout(() => {
       // player.play('src/sounds/game-over.wav');
       this.skin = '💀';
+
       console.log('YOU ARE DEAD!💀');
       process.exit();
     }, 500);
+
   }
 }
 

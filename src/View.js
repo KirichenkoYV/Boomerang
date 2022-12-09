@@ -5,6 +5,7 @@ class View {
   render(track) {
     const yourTeamName = 'Ninjaaaa';
 
+
     // Тут всё рисуем.
     console.clear();
     console.log(track.map((row) => row.join('')).join('\n'));

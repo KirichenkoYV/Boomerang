@@ -26,6 +26,7 @@ class Game {
     this.track = [];
     this.regenerateTrack();
     // this.score = score;
+
   }
 
   generateEnemies() {
@@ -59,6 +60,7 @@ class Game {
       this.herois.skin;
     this.addEnemiesToTrack();
     // eslint-disable-next-line max-len
+
     this.track[this.herois.boomerang.position.y][
       this.herois.boomerang.position.x
     ] = this.herois.boomerang.skin;

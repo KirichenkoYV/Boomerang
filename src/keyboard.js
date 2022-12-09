@@ -22,12 +22,14 @@ const keyboard = {
 
 // Какая-то функция.
 
+
 function runInteractiveConsole(hero, track) {
   keypress(process.stdin);
   process.stdin.on('keypress', (ch, key) => {
     if (key) {
       // Вызывает команду, соответствующую нажатой кнопке.
       if (key.name in keyboard) {
+
         switch (key.name) {
           case 'right':
             if (hero.position.x < track[0].length - 2) {
