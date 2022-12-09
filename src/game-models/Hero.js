@@ -36,8 +36,30 @@ class Hero {
   }
 
   attack() {
-    // Атакуем.
-    this.boomerang.fly();
+    if (this.hasBoomerang) {
+      player.play('src/sounds/just-like-magic.wav');
+      this.hasBoomerang = false;
+      const startPosition = this.boomerang.position.x;
+      let direction = 'right';
+      this.score += 1;
+      const id1 = setInterval(() => {
+        if (this.boomerang.position.x === this.position.x) {
+          this.boomerang.position.x = this.position.x + 1;
+          this.hasBoomerang = true;
+          clearInterval(id1);
+        } else {
+          if (this.boomerang.position.x === startPosition + 10) {
+            direction = 'left';
+          }
+          if (direction === 'right') {
+            this.boomerang.position.x += 1;
+          }
+          if (direction === 'left') {
+            this.boomerang.position.x -= 1;
+          }
+        }
+      }, 30);
+    }
   }
 
   die() {
