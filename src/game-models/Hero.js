@@ -63,9 +63,13 @@ class Hero {
   }
 
   die() {
-    this.skin = '💀';
-    console.log('YOU ARE DEAD!💀');
-    process.exit();
+    player.play('src/sounds/electric-fence-buzzing.wav');
+    setTimeout(() => {
+      // player.play('src/sounds/game-over.wav');
+      this.skin = '💀';
+      console.log(`YOU ARE DEAD!💀${this.score}`);
+      process.exit();
+    }, 0);
   }
 }
 
