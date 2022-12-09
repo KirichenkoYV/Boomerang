@@ -78,12 +78,17 @@ class Game {
   }
 
   play() {
-    setInterval(() => {
+    console.log(this.herois);
+    // const speed = Math.random() * 100 + 200;
+    runInteractiveConsole(this.herois, this.track);
+    this.id = setInterval(() => {
       // Let's play!
-      this.check();
+      // this.enemy.moveLeft();
+      // this.check();
+      this.controlEnemies();
       this.regenerateTrack();
       this.view.render(this.track);
-    });
+    }, 80);
   }
 }
 
