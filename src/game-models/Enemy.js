@@ -31,7 +31,7 @@ class Enemy {
   }
 
   moveLeft() {
-    this.position -= 1;
+    this.position.x -= 1;
   }
 
   die() {
