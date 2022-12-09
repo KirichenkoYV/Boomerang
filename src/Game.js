@@ -54,20 +54,30 @@ class Game {
   regenerateTrack() {
     // Сборка всего необходимого (герой, враг(и), оружие)
     // в единую структуру данных
-    this.track = Array.from({ length: this.trackHeight }, () => [...new Array(this.trackWidth).fill('  ')]);
-    this.track[this.herois.position.y][this.herois.position.x] = this.herois.skin;
+    this.track = Array.from({ length: this.trackHeight }, () => [
+      ...new Array(this.trackWidth).fill('  '),
+    ]);
+    this.track[this.herois.position.y][this.herois.position.x] =
+      this.herois.skin;
     this.addEnemiesToTrack();
     // this.track[this.enemy.position.y][this.enemy.position.x] = this.enemy.skin;
-    this.track[this.herois.boomerang.position.y][this.herois.boomerang.position.x] = this.herois.boomerang.skin;
+    this.track[this.herois.boomerang.position.y][
+      this.herois.boomerang.position.x
+    ] = this.herois.boomerang.skin;
   }
 
   check(enemy, index) {
-    if (this.herois.position.x === enemy.position.x && this.herois.position.y === enemy.position.y) {
+    if (
+      this.herois.position.x === enemy.position.x &&
+      this.herois.position.y === enemy.position.y
+    ) {
       this.herois.die();
     }
-    if (this.herois.boomerang.position.x >= enemy.position.x
-      && this.herois.boomerang.position.y === enemy.position.y
-      && !this.herois.hasBoomerang) {
+    if (
+      this.herois.boomerang.position.x >= enemy.position.x &&
+      this.herois.boomerang.position.y === enemy.position.y &&
+      !this.herois.hasBoomerang
+    ) {
       setTimeout(() => {
         // player.play('src/sounds/exclamation-of-pain.wav');
         enemy.die();
