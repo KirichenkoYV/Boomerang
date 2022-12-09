@@ -31,13 +31,12 @@ class Enemy {
   }
 
   moveLeft() {
-    // Идём влево.
     this.position -= 1;
   }
 
   die() {
     this.position = '?';
-    console.log('Enemy is dead!');
+    console.log('Враг уничтожен!');
   }
 }
 
