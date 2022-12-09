@@ -76,3 +76,5 @@ class Hero {
     }, 0);
   }
 }
+
+module.exports = Hero;
