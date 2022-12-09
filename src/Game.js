@@ -13,7 +13,7 @@ const runInteractiveConsole = require('./keyboard');
 // Тут будут все настройки, проверки, запуск.
 
 class Game {
-  constructor({ trackWidth, trackHeight, score = 0 }) {
+  constructor({ trackWidth, trackHeight }) {
     this.trackWidth = trackWidth;
     this.trackHeight = trackHeight;
     // this.trackLength = trackLength;
@@ -25,7 +25,8 @@ class Game {
     this.view = new View();
     this.track = [];
     this.regenerateTrack();
-    this.score = score;
+    // this.score = score;
+
   }
 
   generateEnemies() {
@@ -52,21 +53,21 @@ class Game {
   }
 
   regenerateTrack() {
-    // Сборка всего необходимого (герой, враг(и), оружие)
-    // в единую структуру данных
     this.track = Array.from({ length: this.trackHeight }, () => [
       ...new Array(this.trackWidth).fill('  '),
     ]);
     this.track[this.herois.position.y][this.herois.position.x] =
       this.herois.skin;
     this.addEnemiesToTrack();
-    // this.track[this.enemy.position.y][this.enemy.position.x] = this.enemy.skin;
+    // eslint-disable-next-line max-len
+
     this.track[this.herois.boomerang.position.y][
       this.herois.boomerang.position.x
     ] = this.herois.boomerang.skin;
   }
 
   check(enemy, index) {
+    // eslint-disable-next-line max-len
     if (
       this.herois.position.x === enemy.position.x &&
       this.herois.position.y === enemy.position.y

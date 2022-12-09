@@ -5,7 +5,7 @@
 class Boomerang {
   constructor() {
     this.skin = '🪃';
-    this.position = { x: 1, y: 0};
+    this.position = { x: 1, y: 0 };
   }
 
   // fly() {
