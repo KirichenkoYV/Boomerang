@@ -24,4 +24,16 @@ class Hero {
     this.position.x += 1;
     this.boomerang.position.x += 1;
   }
+
+  moveUp() {
+    if (this.position.y > 0) {
+      this.position.y -= 1;
+      this.boomerang.position.y -= 1;
+    }
+  }
+
+  moveDown() {
+    this.position.y += 1;
+    this.boomerang.position.y += 1;
+  }
 }
